@@ -159,7 +159,10 @@ JSNES.CPU.prototype = {
             this.irqRequested = false;
         }
 
+        
+        
         var opinf = this.opdata[this.nes.mmap.load(this.REG_PC+1)];
+        
         var cycleCount = (opinf>>24);
         var cycleAdd = 0;
 

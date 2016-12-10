@@ -76,7 +76,13 @@ app.directive('gameList', ['$mdDialog','$mdMedia',
 					parent: angular.element(document.body),
 					targetEvent: ev,
 					clickOutsideToClose:true,
-					fullscreen: useFullScreen,
+					fullscreen: useFullScreen,	
+					onRemoving:function(){			
+						if($scope.nes.isRunning)
+						{
+							$scope.nes.stop();	
+						}						
+					},
 					locals: {
 						items: {
 							item:item
